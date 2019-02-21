@@ -6,7 +6,7 @@ This trigger component added custom functionality to React Trigger Component
 
 [![NPM version][npm-image]][npm-url]
 
-[npm-image]: http://img.shields.io/npm/v/rc-trigger.svg?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/trigger-plus.svg
 [npm-url]: https://www.npmjs.com/package/trigger-plus
 
 ## Browser Support
