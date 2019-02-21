@@ -1,28 +1,13 @@
-# rc-trigger
+# trigger-plus
 ---
 
-React Trigger Component
+This trigger component added custom functionality to React Trigger Component
 
 
 [![NPM version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
-[![gemnasium deps][gemnasium-image]][gemnasium-url]
-[![npm download][download-image]][download-url]
 
 [npm-image]: http://img.shields.io/npm/v/rc-trigger.svg?style=flat-square
 [npm-url]: http://npmjs.org/package/rc-trigger
-[travis-image]: https://img.shields.io/travis/react-component/trigger.svg?style=flat-square
-[travis-url]: https://travis-ci.org/react-component/trigger
-[coveralls-image]: https://img.shields.io/coveralls/react-component/trigger.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/react-component/trigger?branch=master
-[gemnasium-image]: http://img.shields.io/gemnasium/react-component/trigger.svg?style=flat-square
-[gemnasium-url]: https://gemnasium.com/react-component/trigger
-[node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
-[node-url]: http://nodejs.org/download/
-[download-image]: https://img.shields.io/npm/dm/rc-trigger.svg?style=flat-square
-[download-url]: https://npmjs.org/package/rc-trigger
-
 
 ## Browser Support
 
@@ -42,15 +27,9 @@ npm start
 
 http://localhost:8200/examples/
 
-online example: http://react-component.github.io/trigger/examples/
-
 ## Feature
 
 * supported on IE 8+, Chrome, Firefox, and Safari
-
-## install
-
-[![rc-trigger](https://nodei.co/npm/rc-trigger.png)](https://npmjs.org/package/rc-trigger)
 
 ## Usage
 
@@ -330,4 +309,4 @@ class App extends React.Component {
 
 ## License
 
-rc-trigger is released under the MIT license.
+trigger-plus is released under the MIT license.
