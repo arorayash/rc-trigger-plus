@@ -1,18 +1,19 @@
 {
-  "name": "trigger-plus",
-  "version": "1.0.3",
+  "name": "rc-trigger-plus",
+  "version": "1.0.1",
   "description": "custom enhancements to base abstract trigger component for react",
   "keywords": [
     "react",
     "react-component",
     "react-trigger",
-    "trigger"
+    "trigger",
+    "rc-trigger-plus"
   ],
-  "homepage": "https://github.com/arorayash/trigger-plus",
+  "homepage": "https://github.com/arorayash/rc-trigger-plus",
   "author": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arorayash/trigger-plus.git"
+    "url": "https://github.com/arorayash/rc-trigger-plus.git"
   },
   "files": [
     "es",

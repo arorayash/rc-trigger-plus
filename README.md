@@ -1,4 +1,4 @@
-# trigger-plus
+# rc-trigger-plus
 ---
 
 This trigger component added custom functionality to React Trigger Component
@@ -6,8 +6,8 @@ This trigger component added custom functionality to React Trigger Component
 
 [![NPM version][npm-image]][npm-url]
 
-[npm-image]: https://img.shields.io/npm/v/trigger-plus.svg
-[npm-url]: https://www.npmjs.com/package/trigger-plus
+[npm-image]: https://img.shields.io/npm/v/rc-trigger-plus.svg
+[npm-url]: https://www.npmjs.com/package/rc-trigger-plus
 
 ## Browser Support
 
@@ -307,4 +307,4 @@ class App extends React.Component {
 
 ## License
 
-trigger-plus is released under the MIT license.
+rc-trigger-plus is released under the MIT license.
