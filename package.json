@@ -1,6 +1,6 @@
 {
   "name": "trigger-plus",
-  "version": "2.6.2",
+  "version": "1.0.1",
   "description": "custom enhancements to base abstract trigger component for react",
   "keywords": [
     "react",
