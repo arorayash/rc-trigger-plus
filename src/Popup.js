@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
-import Align from 'rc-align';
-import Animate from 'rc-animate';
-import PopupInner from './PopupInner';
-import LazyRenderBox from './LazyRenderBox';
-import { saveRef } from './utils';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import ReactDOM from "react-dom";
+import Align from "rc-align";
+import Animate from "rc-animate";
+import PopupInner from "./PopupInner";
+import LazyRenderBox from "./LazyRenderBox";
+import { saveRef } from "./utils";
 
 class Popup extends Component {
   static propTypes = {
@@ -26,8 +26,8 @@ class Popup extends Component {
     children: PropTypes.node,
     point: PropTypes.shape({
       pageX: PropTypes.number,
-      pageY: PropTypes.number,
-    }),
+      pageY: PropTypes.number
+    })
   };
 
   constructor(props) {
@@ -37,11 +37,11 @@ class Popup extends Component {
       // Used for stretch
       stretchChecked: false,
       targetWidth: undefined,
-      targetHeight: undefined,
+      targetHeight: undefined
     };
 
-    this.savePopupRef = saveRef.bind(this, 'popupInstance');
-    this.saveAlignRef = saveRef.bind(this, 'alignInstance');
+    this.savePopupRef = saveRef.bind(this, "popupInstance");
+    this.saveAlignRef = saveRef.bind(this, "alignInstance");
   }
 
   componentDidMount() {
@@ -63,7 +63,7 @@ class Popup extends Component {
       popupDomNode.className = this.getClassName(currentAlignClassName);
     }
     props.onAlign(popupDomNode, align);
-  }
+  };
 
   // Record size if stretch needed
   setStretchSize = () => {
@@ -87,7 +87,7 @@ class Popup extends Component {
       this.setState({
         stretchChecked: true,
         targetHeight: height,
-        targetWidth: width,
+        targetWidth: width
       });
     }
   };
@@ -98,7 +98,7 @@ class Popup extends Component {
 
   getTargetElement = () => {
     return this.props.getRootDomNode();
-  }
+  };
 
   // `target` on `rc-align` can accept as a function to get the bind element or a point.
   // ref: https://www.npmjs.com/package/rc-align
@@ -108,7 +108,7 @@ class Popup extends Component {
       return point;
     }
     return this.getTargetElement;
-  }
+  };
 
   getMaskTransitionName() {
     const props = this.props;
@@ -137,13 +137,22 @@ class Popup extends Component {
     const { savePopupRef } = this;
     const { stretchChecked, targetHeight, targetWidth } = this.state;
     const {
-      align, visible,
-      prefixCls, style, getClassNameFromAlign,
-      destroyPopupOnHide, stretch, children,
-      onMouseEnter, onMouseLeave, onMouseDown, onTouchStart,
+      align,
+      visible,
+      prefixCls,
+      style,
+      getClassNameFromAlign,
+      destroyPopupOnHide,
+      stretch,
+      children,
+      onMouseEnter,
+      onMouseLeave,
+      onMouseDown,
+      onTouchStart
     } = this.props;
-    const className = this.getClassName(this.currentAlignClassName ||
-      getClassNameFromAlign(align));
+    const className = this.getClassName(
+      this.currentAlignClassName || getClassNameFromAlign(align)
+    );
     const hiddenClassName = `${prefixCls}-hidden`;
 
     if (!visible) {
@@ -153,20 +162,20 @@ class Popup extends Component {
     const sizeStyle = {};
     if (stretch) {
       // Stretch with target
-      if (stretch.indexOf('height') !== -1) {
+      if (stretch.indexOf("height") !== -1) {
         sizeStyle.height = targetHeight;
-      } else if (stretch.indexOf('minHeight') !== -1) {
+      } else if (stretch.indexOf("minHeight") !== -1) {
         sizeStyle.minHeight = targetHeight;
       }
-      if (stretch.indexOf('width') !== -1) {
+      if (stretch.indexOf("width") !== -1) {
         sizeStyle.width = targetWidth;
-      } else if (stretch.indexOf('minWidth') !== -1) {
+      } else if (stretch.indexOf("minWidth") !== -1) {
         sizeStyle.minWidth = targetWidth;
       }
 
       // Delay force align to makes ui smooth
       if (!stretchChecked) {
-        sizeStyle.visibility = 'hidden';
+        sizeStyle.visibility = "hidden";
         setTimeout(() => {
           if (this.alignInstance) {
             this.alignInstance.forceAlign();
@@ -178,7 +187,7 @@ class Popup extends Component {
     const newStyle = {
       ...sizeStyle,
       ...style,
-      ...this.getZIndexStyle(),
+      ...this.getZIndexStyle()
     };
 
     const popupInnerProps = {
@@ -189,7 +198,7 @@ class Popup extends Component {
       onMouseLeave,
       onMouseDown,
       onTouchStart,
-      style: newStyle,
+      style: newStyle
     };
     if (destroyPopupOnHide) {
       return (
@@ -208,10 +217,7 @@ class Popup extends Component {
               align={align}
               onAlign={this.onAlign}
             >
-              <PopupInner
-                visible
-                {...popupInnerProps}
-              >
+              <PopupInner visible {...popupInnerProps}>
                 {children}
               </PopupInner>
             </Align>
@@ -234,15 +240,12 @@ class Popup extends Component {
           ref={this.saveAlignRef}
           monitorWindowResize
           xVisible={visible}
-          childrenProps={{ visible: 'xVisible' }}
+          childrenProps={{ visible: "xVisible" }}
           disabled={!visible}
           align={align}
           onAlign={this.onAlign}
         >
-          <PopupInner
-            hiddenClassName={hiddenClassName}
-            {...popupInnerProps}
-          >
+          <PopupInner hiddenClassName={hiddenClassName} {...popupInnerProps}>
             {children}
           </PopupInner>
         </Align>

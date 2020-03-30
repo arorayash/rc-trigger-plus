@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import LazyRenderBox from './LazyRenderBox';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import LazyRenderBox from "./LazyRenderBox";
 
 class PopupInner extends Component {
   static propTypes = {
@@ -11,7 +11,7 @@ class PopupInner extends Component {
     onMouseLeave: PropTypes.func,
     onMouseDown: PropTypes.func,
     onTouchStart: PropTypes.func,
-    children: PropTypes.any,
+    children: PropTypes.any
   };
   render() {
     const props = this.props;
@@ -28,7 +28,10 @@ class PopupInner extends Component {
         onTouchStart={props.onTouchStart}
         style={props.style}
       >
-        <LazyRenderBox className={`${props.prefixCls}-content`} visible={props.visible}>
+        <LazyRenderBox
+          className={`${props.prefixCls}-content`}
+          visible={props.visible}
+        >
           {props.children}
         </LazyRenderBox>
       </div>
