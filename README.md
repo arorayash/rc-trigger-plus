@@ -1,18 +1,14 @@
 # rc-trigger-plus
+
 ---
 
 This trigger component added custom functionality to React Trigger Component
 
-
-[![NPM version][npm-image]][npm-url]
-
-[npm-image]: https://img.shields.io/npm/v/rc-trigger-plus.svg
-[npm-url]: https://www.npmjs.com/package/rc-trigger-plus
+v1.1.1
 
 ## Browser Support
 
 | IE 8+ ✔ | Chrome 31.0+ ✔ | Firefox 31.0+ ✔ | Opera 30.0+ ✔ | Safari 7.0+ ✔ |
-
 
 ## Development
 
@@ -27,29 +23,32 @@ http://localhost:8200/examples/
 
 ## Feature
 
-* supported on IE 8+, Chrome, Firefox, and Safari
+- supported on IE 8+, Chrome, Firefox, and Safari
 
 ## Usage
 
-Include the default [styling](https://github.com/react-component/trigger/blob/master/assets/index.less#L4:L11) and then:
+Include the default
+[styling](https://github.com/react-component/trigger/blob/master/assets/index.less#L4:L11)
+and then:
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Trigger from 'rc-trigger';
+import React from "react";
+import ReactDOM from "react-dom";
+import Trigger from "rc-trigger-plus";
 
-ReactDOM.render((
-  <Trigger
-    action={['click']}
-    popup={<span>popup</span>}
-    popupAlign={{
-      points: ['tl', 'bl'],
-      offset: [0, 3]
-    }}
-  >
-    <a href='#'>hover</a>
-  </Trigger>
-), container);
+ReactDOM.render(
+	<Trigger
+		action={["click"]}
+		popup={<span>popup</span>}
+		popupAlign={{
+			points: ["tl", "bl"],
+			offset: [0, 3]
+		}}
+	>
+		<a href="#">hover</a>
+	</Trigger>,
+	container
+);
 ```
 
 ## API
@@ -231,7 +230,6 @@ ReactDOM.render((
     </tbody>
 </table>
 
-
 ## Test Case
 
 ```
@@ -249,24 +247,29 @@ open coverage/ dir
 
 ## React 16 Note
 
-After React 16, you won't access popup element's ref in parent component's componentDidMount, which means following code won't work.
+After React 16, you won't access popup element's ref in parent component's
+componentDidMount, which means following code won't work.
 
 ```javascript
 class App extends React.Component {
-  componentDidMount() {
-    this.input.focus(); // error, this.input is undefined.
-  }
+	componentDidMount() {
+		this.input.focus(); // error, this.input is undefined.
+	}
 
-  render() {
-    return (
-      <Trigger
-        action={['click']}
-        popup={<div><input ref={node => this.input = node} type="text" /></div>}
-      >
-        <button>click</button>
-      </Trigger>
-    )
-  }
+	render() {
+		return (
+			<Trigger
+				action={["click"]}
+				popup={
+					<div>
+						<input ref={node => (this.input = node)} type="text" />
+					</div>
+				}
+			>
+				<button>click</button>
+			</Trigger>
+		);
+	}
 }
 ```
 
@@ -274,34 +277,39 @@ Consider wrap your popup element to a separate component:
 
 ```javascript
 class InputPopup extends React.Component {
-  componentDidMount() {
-    this.props.onMount();
-  }
+	componentDidMount() {
+		this.props.onMount();
+	}
 
-  render() {
-    return (
-      <div>
-        <input ref={this.props.inputRef} type="text" />
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div>
+				<input ref={this.props.inputRef} type="text" />
+			</div>
+		);
+	}
 }
 
 class App extends React.Component {
-  handlePopupMount() {
-    this.input.focus(); // error, this.input is undefined.
-  }
+	handlePopupMount() {
+		this.input.focus(); // error, this.input is undefined.
+	}
 
-  render() {
-    return (
-      <Trigger
-        action={['click']}
-        popup={<InputPopup inputRef={node => this.input = node} onMount={this.handlePopupMount} />}
-      >
-        <button>click</button>
-      </Trigger>
-    )
-  }
+	render() {
+		return (
+			<Trigger
+				action={["click"]}
+				popup={
+					<InputPopup
+						inputRef={node => (this.input = node)}
+						onMount={this.handlePopupMount}
+					/>
+				}
+			>
+				<button>click</button>
+			</Trigger>
+		);
+	}
 }
 ```
 
